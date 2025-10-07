@@ -57,7 +57,7 @@ class StoryRequest(BaseModel):
     desc: str
     style: str
 
-@app.post("/generate")
+@app.post("/api/generate")
 async def generate_story(request: StoryRequest):
     if llm is None:
         return {"error": "LLM not initialized. Check your API key and configuration."}
