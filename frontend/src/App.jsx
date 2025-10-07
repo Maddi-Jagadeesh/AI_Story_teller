@@ -21,7 +21,7 @@ function App() {
     setIsLoading(true); setError(''); setResult(null);
     try {
       const apiUrl = import.meta.env.VITE_API_URL || 'http://127.0.0.1:8000';
-      const response = await axios.post(`${apiUrl}/generate`, {
+      const response = await axios.post(`${apiUrl}/api/generate`, {
         emotion: selectedEmotion.name, desc: description, style: style,
       });
       if (response.data.error) { setError(response.data.error); }
